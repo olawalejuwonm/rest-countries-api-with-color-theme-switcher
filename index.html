@@ -20,30 +20,35 @@
             <div class="w-100 mb-5"></div>
             <div class="col-12">
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search for a country" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search for a country"
+                        aria-label="Search" onchange="SearchF(event)">
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-md-end">
             <div class="dropdown">
-                <button class="btn btn-white dropdown-toggle shadow" type="button" id="dropdownMenu2" 
+                <button class="btn btn-white dropdown-toggle shadow" type="button" id="dropdownMenu2"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Filter By Region
+                    Filter By Region
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item">Africa</button>
-                    <button class="dropdown-item">America</button>
-                    <button class="dropdown-item">Asia</button>
-                    <button class="dropdown-item">Europe</button>
-                    <button class="dropdown-item">Oceania</button>
+                    <button class="dropdown-item" onclick="FilAfrica()">Africa</button>
+                    <button class="dropdown-item" onclick="FilAmerica()">America</button>
+                    <button class="dropdown-item" onclick="FilAsia()">Asia</button>
+                    <button class="dropdown-item" onclick="FilEurope()">Europe</button>
+                    <button class="dropdown-item" onclick="FilOceania()">Oceania</button>
                 </div>
-              </div>
+            </div>
+        </div>
+        <div class="row" id="result">
+
         </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="./scripts/jscript.js"></script>
     <script src="./scripts/pscript.js"></script>
     <script src="./scripts/bscript.js"></script>
+    <script src="./scripts/main.js"></script>
 
 </body>
 
