@@ -101,7 +101,7 @@ const FilAmerica = () => {
     let Countries = [];
     mainData.map((datas) => {
         datas.map((data) => {
-            if ((data.region.toLowerCase()) === "america") {
+            if ((data.region.toLowerCase()) === "americas") {
                 Countries.push(data)
             }
         })
