@@ -225,7 +225,11 @@ const FilAsia = () => {
 
 const ClickCountry = (event) => {
     // console.log(Object.keys(event.target)
-    console.log(event.target.getAttribute("data"))
+    console.log(event.target.getAttribute("data"));
+    let Data = event.target.getAttribute("data");
+    let url = document.location.origin + '/' + 'details.html?name=' + encodeURIComponent(Data);
+    console.log(url)
+    
 }
 
 // const gggh = "mic"
