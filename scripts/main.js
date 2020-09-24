@@ -12,27 +12,39 @@ fetch("https://restcountries.eu/rest/v2/all")
 
             if (indx < 8) {
                 // console.log(res)
-                const temp = `<div class="card shadow mb-5" style="height:25rem" >
-                <img src="${res.flag}" class="card-img-top" alt="${res.name}" >
-                <div class="card-body mt-md-5">
-                <p class="card-title font-weight-bolder ">${res.name}</p>
+                const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
                 const wDiv = document.createElement("div");
                 wDiv.setAttribute("class", "col-12 col-md-3");
-                wDiv.innerHTML = temp
+                wDiv.innerHTML = temp;
                 Hresp.appendChild(wDiv)
 
             }
         })
     }).catch((err) => {
-        alert(err)
-    })
+        Hresp.innerText = err;
+        // alert(err);
+    });
+
+
 
 const SearchF = (event) => {
+    // event.stopPropagation();
+    // alert(event.cancelable);
+    // event.preventDefault();
+    if (event.keyCode == 13) {
+        // console.log("enter pressed")
+        event.preventDefault();
+        return null;
+    }
     let SearchData = [];
     const SearchWord = event.target.value.toLowerCase();
     mainData.map((datas) => {
@@ -49,13 +61,14 @@ const SearchF = (event) => {
     })
     Hresp.innerHTML = ""
     SearchData.map((res) => {
-        const temp = `<div class="card shadow mb-5" style="height:25rem" >
-                <img src="${res.flag}" class="card-img-top" alt="${res.name}" >
-                <div class="card-body mt-md-5">
-                <p class="card-title font-weight-bolder ">${res.name}</p>
+        const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -66,7 +79,7 @@ const SearchF = (event) => {
 
     })
 
-    console.log(SearchData.length)
+    // console.log(SearchData.length)
 
 }
 
@@ -81,13 +94,14 @@ const FilAfrica = () => {
     });
     Hresp.innerHTML = ""
     Countries.map((res) => {
-        const temp = `<div class="card shadow mb-5" style="height:25rem" >
-                <img src="${res.flag}" class="card-img-top" alt="${res.name}" >
-                <div class="card-body mt-md-5">
-                <p class="card-title font-weight-bolder ">${res.name}</p>
+        const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -108,13 +122,14 @@ const FilAmerica = () => {
     });
     Hresp.innerHTML = ""
     Countries.map((res) => {
-        const temp = `<div class="card shadow mb-5" style="height:25rem" >
-                <img src="${res.flag}" class="card-img-top" alt="${res.name}" >
-                <div class="card-body mt-md-5">
-                <p class="card-title font-weight-bolder ">${res.name}</p>
+        const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -135,13 +150,14 @@ const FilEurope = () => {
     });
     Hresp.innerHTML = ""
     Countries.map((res) => {
-        const temp = `<div class="card shadow mb-5" style="height:25rem" >
-                <img src="${res.flag}" class="card-img-top" alt="${res.name}" >
-                <div class="card-body mt-md-5">
-                <p class="card-title font-weight-bolder ">${res.name}</p>
+        const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -162,13 +178,14 @@ const FilOceania = () => {
     });
     Hresp.innerHTML = ""
     Countries.map((res) => {
-        const temp = `<div class="card shadow mb-5" style="height:25rem" >
-                <img src="${res.flag}" class="card-img-top" alt="${res.name}" >
-                <div class="card-body mt-md-5">
-                <p class="card-title font-weight-bolder ">${res.name}</p>
+        const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -178,7 +195,38 @@ const FilOceania = () => {
     });
 }
 
+const FilAsia = () => {
+    let Countries = [];
+    mainData.map((datas) => {
+        datas.map((data) => {
+            if ((data.region.toLowerCase()) === "asia") {
+                Countries.push(data)
+            }
+        })
+    });
+    Hresp.innerHTML = ""
+    Countries.map((res) => {
+        const temp = `<div class="card shadow mb-5"    >
+                <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
+                <div class="card-body mt-md-4 text-wrap">
+                <p class="card-title font-weight-bolder">${res.name}</p>
+                <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
+                <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
+                <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
+                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                </div>
+              </div>`
+        const wDiv = document.createElement("div");
+        wDiv.setAttribute("class", "col-12 col-md-3");
+        wDiv.innerHTML = temp;
+        Hresp.appendChild(wDiv);
+    });   
+}
 
+const ClickCountry = (event) => {
+    // console.log(Object.keys(event.target)
+    console.log(event.target.getAttribute("data"))
+}
 
 // const gggh = "mic"
 
