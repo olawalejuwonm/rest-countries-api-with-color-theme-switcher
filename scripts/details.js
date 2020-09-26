@@ -63,6 +63,7 @@ fetch(`https://restcountries.eu/rest/v2/name/${SavedData}?fullText=true`)
         const wDiv = document.createElement("div");
         wDiv.setAttribute("class", "d-block d-md-flex");
         wDiv.innerHTML = temp;
+        document.getElementById("load").classList.add("d-none")
         conD.appendChild(wDiv);
     })
 

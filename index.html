@@ -13,6 +13,7 @@
         <div class="row mb-5">
             <nav class="navbar fixed-top navbar-light bg-white shadow-sm mb-5">
                 <p class="navbar-brand font-weight-bolder pt-4">Where in the world?</p>
+                <div class="text text-center">Developed By <a href="https://github.com/olawalejuwonm">Olawale Micheal Juwon</a></div>
                 <p class="btn btn-secondary float-left pt-2" onclick="ToggleColor()">Dark Mode</p>
             </nav>
         </div>
@@ -21,9 +22,7 @@
             <div class="col-12">
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search for a country"
-                        aria-label="Search" 
-                        onkeydown="SearchF(event)"
-                        />
+                        aria-label="Search" onkeydown="SearchF(event)" />
 
 
                 </form>
@@ -45,9 +44,10 @@
             </div>
         </div>
         <div class="row" id="result">
-
+            <div class="text text-center m-5" id="load">Loading...</div>
         </div>
     </div>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="./scripts/jscript.js"></script>
     <script src="./scripts/pscript.js"></script>

@@ -22,6 +22,7 @@ fetch("https://restcountries.eu/rest/v2/all")
                 const wDiv = document.createElement("div");
                 wDiv.setAttribute("class", "col-12 col-md-3");
                 wDiv.innerHTML = temp;
+                document.getElementById("load").classList.add("d-none")
                 Hresp.appendChild(wDiv)
 
         })
