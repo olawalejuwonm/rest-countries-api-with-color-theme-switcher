@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
     <div class="container">
+        <div class="row mb-5">
+            <nav class="navbar fixed-top navbar-light bg-white shadow-sm mb-5">
+                <p class="navbar-brand font-weight-bolder pt-4">Where in the world?</p>
+                <p class="btn btn-secondary float-left pt-2" onclick="ToggleColor()">Dark Mode</p>
+            </nav>
+        </div>
         <div class="row">
             <div class="col-4 col-md-auto">
-                <button class="card shadow btn btn mb-5 mt-5 pl-3 pl-md-3 pr-md-3">Go back</button>
+                <a class="card shadow btn btn mb-5 mt-5 pl-3 pl-md-3 pr-md-3" href="./index.html">Go back</a>
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-5">
-                <img class="img-fluid" src="https://restcountries.eu/data/afg.svg" alt="" />
-            </div>
-            <div class="col-12 col-md-6 ml-md-5">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="h2 mt-5 mb-4 font-weight-bolder mt-md-2">Belgium</div>
-                        <p class="text-dark font-weight-bold">Native Name: <span class="font-weight-light">Belge</span></p>
-                        <p class="text-dark font-weight-bold">Population: <span class="font-weight-light">111234</span></p>
-                        <p class="text-dark font-weight-bold">Region: <span class="font-weight-light">Africa</span></p>
-                        <p class="text-dark font-weight-bold">Sub Region: <span class="font-weight-light">Belge</span></p>
-                        <p class="text-dark font-weight-bold mb-5">Capital: <span class="font-weight-light">Belge</span></p>
-                    </div>
-                    
-                    <div class="col-md-6 mt-md-5 ">
-                        <div class="w-100 mt-3 d-none d-md-block"></div>
-                        <p class="text-dark font-weight-bold">Top Level Domain: <span class="font-weight-light">Belge</span></p>
-                        <p class="text-dark font-weight-bold">Currencies: <span class="font-weight-light">Belge</span></p>
-                        <p class="text-dark font-weight-bold mb-5">Languages: <span class="font-weight-light">Belge</span></p>    
-                    </div>
-                    <div class="row">
-                        <p class="h6 ml-3 ml-md-4 mt-md-1">Border Countries:</p>
-                        <div class="w-100 mb-1 d-md-none"></div>
-                        <div class="card shadow col-3  ml-3 mr-3  col-md-auto">Michhhh</div>
-                        <div class="card shadow col-3 mr-3  col-md-auto">Michghhhhh</div>
-                        <div class="card shadow col-3 mr-3  col-md-auto">Micggggg</div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-12 col-md-3"></div> -->
+        <div class="row" id="cond">
+            
         </div>
+    </div>
     </div>
     <script src="./scripts/details.js"></script>
 </body>
+
 </html>

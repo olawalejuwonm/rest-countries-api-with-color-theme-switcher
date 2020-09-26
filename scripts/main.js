@@ -8,9 +8,8 @@ fetch("https://restcountries.eu/rest/v2/all")
     .then((resp) => {
         // console.log(resp)
         mainData.push(resp);
-        resp.map((res, indx) => {
+        resp.map((res) => {
 
-            if (indx < 8) {
                 // console.log(res)
                 const temp = `<div class="card shadow mb-5"    >
                 <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
@@ -27,7 +26,6 @@ fetch("https://restcountries.eu/rest/v2/all")
                 wDiv.innerHTML = temp;
                 Hresp.appendChild(wDiv)
 
-            }
         })
     }).catch((err) => {
         Hresp.innerText = err;
@@ -220,18 +218,25 @@ const FilAsia = () => {
         wDiv.setAttribute("class", "col-12 col-md-3");
         wDiv.innerHTML = temp;
         Hresp.appendChild(wDiv);
-    });   
+    });
 }
 
 const ClickCountry = (event) => {
     // console.log(Object.keys(event.target)
     console.log(event.target.getAttribute("data"));
     let Data = event.target.getAttribute("data");
-    let url = document.location.origin + '/' + 'details.html?name=' + encodeURIComponent(Data);
-    console.log(url)
-    
+    let url = document.location.origin + '/' + 'details.html?' + encodeURIComponent(Data);
+    document.location.href = url
+    // console.log(url);
+    // console.log(document.location === window.location)
+    // document.location
+
 }
 
+const ToggleColor = () => {
+    // alert("toggle")
+    document.body.classList.add("bg-secondary");
+}
 // const gggh = "mic"
 
 // console.log(gggh.includes("mi"))
