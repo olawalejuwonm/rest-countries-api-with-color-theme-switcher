@@ -2,17 +2,17 @@ const conD = document.getElementById("cond");
 let SavedData = ""
 const SearchParams = document.location.search.split('');
 SearchParams.map((param) => {
-    if (param !== "?" && param !== "%") {
+    if (param !== "?") {
         SavedData = SavedData + param
     }
 })
-console.log(SavedData);
 fetch(`https://restcountries.eu/rest/v2/name/${SavedData}?fullText=true`)
     .then((resp) => {
         return resp.json()
     })
     .then((response) => {
-        console.log(response);
+        // console.log(response)
+        // console.log(`https://restcountries.eu/rest/v2/name/${SavedData}?fullText=true`)
         const res = response[0];
         let langs = [];
         res.languages.map((lang) => {
@@ -65,7 +65,6 @@ fetch(`https://restcountries.eu/rest/v2/name/${SavedData}?fullText=true`)
         wDiv.innerHTML = temp;
         conD.appendChild(wDiv);
     })
-    // console.log(SearchParams[SearchParams.length])
 
     const ToggleColor = () => {
         // alert("toggle")

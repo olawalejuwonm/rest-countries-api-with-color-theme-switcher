@@ -6,11 +6,9 @@ fetch("https://restcountries.eu/rest/v2/all")
         return resp.json()
     })
     .then((resp) => {
-        // console.log(resp)
         mainData.push(resp);
         resp.map((res) => {
 
-                // console.log(res)
                 const temp = `<div class="card shadow mb-5"    >
                 <img src="${res.flag}" class="card-img-top" alt="${res.name}" style="height:10rem">
                 <div class="card-body mt-md-4 text-wrap">
@@ -39,18 +37,13 @@ const SearchF = (event) => {
     // alert(event.cancelable);
     // event.preventDefault();
     if (event.keyCode == 13) {
-        // console.log("enter pressed")
         event.preventDefault();
         return null;
     }
     let SearchData = [];
     const SearchWord = event.target.value.toLowerCase();
     mainData.map((datas) => {
-        // console.log(mainData.length)
         datas.map((data) => {
-            // if (indx == 1) {
-            //     console.log(data)
-            // }
             if ((data.name.toLowerCase()).includes(SearchWord)) {
                 SearchData.push(data)
             }
@@ -77,7 +70,6 @@ const SearchF = (event) => {
 
     })
 
-    // console.log(SearchData.length)
 
 }
 
@@ -222,14 +214,10 @@ const FilAsia = () => {
 }
 
 const ClickCountry = (event) => {
-    // console.log(Object.keys(event.target)
     console.log(event.target.getAttribute("data"));
     let Data = event.target.getAttribute("data");
     let url = document.location.origin + '/' + 'details.html?' + encodeURIComponent(Data);
     document.location.href = url
-    // console.log(url);
-    // console.log(document.location === window.location)
-    // document.location
 
 }
 
