@@ -217,9 +217,8 @@ const FilAsia = () => {
 const ClickCountry = (event) => {
     console.log(event.target.getAttribute("data"));
     let Data = event.target.getAttribute("data");
-    let url = document.location.origin + '/' + 'details.html?' + encodeURIComponent(Data);
-    document.location.href = url
-
+    let url = './' + 'details.html?' + encodeURIComponent(Data);
+    window.location.assign(url);
 }
 
 const ToggleColor = () => {
