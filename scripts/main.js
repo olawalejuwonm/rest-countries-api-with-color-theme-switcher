@@ -16,7 +16,7 @@ fetch("https://restcountries.eu/rest/v2/all")
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
                 const wDiv = document.createElement("div");
@@ -60,7 +60,7 @@ const SearchF = (event) => {
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -92,7 +92,7 @@ const FilAfrica = () => {
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -120,7 +120,7 @@ const FilAmerica = () => {
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -148,7 +148,7 @@ const FilEurope = () => {
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -176,7 +176,7 @@ const FilOceania = () => {
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -204,7 +204,7 @@ const FilAsia = () => {
                 <p class="font-weight-light p-0 m-0">Population: <span class="card-text ">${res.population}</span></p>
                 <p class="font-weight-light p-0 m-0">Region: <span class="card-text ">${res.region}</span></p>
                 <p class="font-weight-light p-0 m-0">Capital: <span class="card-text ">${res.capital}</span></p>
-                <button class="btn btn-info offset-4 offset-md-3" data="${res.name}" onclick="ClickCountry(event)">Details</button>
+                <button class="btn btn-info offset-4 offset-md-3" details="${res.name}" onclick="ClickCountry(event)">Details</button>
                 </div>
               </div>`
         const wDiv = document.createElement("div");
@@ -215,8 +215,8 @@ const FilAsia = () => {
 }
 
 const ClickCountry = (event) => {
-    console.log(event.target.getAttribute("data"));
-    let Data = event.target.getAttribute("data");
+    // console.log(event.target.getAttribute("data"));
+    let Data = event.target.getAttribute("details");
     let url = './' + 'details.html?' + encodeURIComponent(Data);
     window.location.assign(url);
 }
